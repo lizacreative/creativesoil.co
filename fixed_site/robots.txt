@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://creativesoil.framer.website/sitemap.xml
