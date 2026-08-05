@@ -1,0 +1,46 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/ideas/independent-shops-vs-big-chains-is-your-food-brand-bleeding-money-on-the-wrong-strategy.", "destination": "/ideas/independent-shops-vs-big-chains-is-your-food-brand-bleeding-money-on-the-wrong-strategy", "permanent": false },
+    { "source": "/ideas/your-marketing-strategy-is-trapped-in-2024-the-brutal-truth-about-selling-in-the-uk-today.", "destination": "/ideas/your-marketing-strategy-is-trapped-in-2024-the-brutal-truth-about-selling-in-the-uk-today", "permanent": false },
+    { "source": "/ideas/the-brutal-reason-your-wellness-drink-is-dying-on-the-shelf.", "destination": "/ideas/the-brutal-reason-your-wellness-drink-is-dying-on-the-shelf", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/works/good-hemp", "destination": "/works/good-hemp/index.html" },
+    { "source": "/works/fatt", "destination": "/works/fatt/index.html" },
+    { "source": "/works/roam", "destination": "/works/roam/index.html" },
+    { "source": "/works/pure-health-supply-co", "destination": "/works/pure-health-supply-co/index.html" },
+    { "source": "/works/reclaim", "destination": "/works/reclaim/index.html" },
+    { "source": "/works", "destination": "/works/index.html" },
+    { "source": "/ideas/is-your-marketing-strategy-just-guesswork", "destination": "/ideas/is-your-marketing-strategy-just-guesswork/index.html" },
+    { "source": "/ideas/the-harrods-halo-effect-the-secret-listing-that-will-transform-your-entire-food-brand", "destination": "/ideas/the-harrods-halo-effect-the-secret-listing-that-will-transform-your-entire-food-brand/index.html" },
+    { "source": "/ideas/independent-shops-vs-big-chains-is-your-food-brand-bleeding-money-on-the-wrong-strategy", "destination": "/ideas/independent-shops-vs-big-chains-is-your-food-brand-bleeding-money-on-the-wrong-strategy/index.html" },
+    { "source": "/ideas/independent-shops-vs-big-chains-is-your-food-brand-bleeding-money-on-the-wrong-strategy.", "destination": "/ideas/independent-shops-vs-big-chains-is-your-food-brand-bleeding-money-on-the-wrong-strategy/index.html" },
+    { "source": "/ideas/your-marketing-strategy-is-trapped-in-2024-the-brutal-truth-about-selling-in-the-uk-today", "destination": "/ideas/your-marketing-strategy-is-trapped-in-2024-the-brutal-truth-about-selling-in-the-uk-today/index.html" },
+    { "source": "/ideas/your-marketing-strategy-is-trapped-in-2024-the-brutal-truth-about-selling-in-the-uk-today.", "destination": "/ideas/your-marketing-strategy-is-trapped-in-2024-the-brutal-truth-about-selling-in-the-uk-today/index.html" },
+    { "source": "/ideas/are-you-burning-cash-on-digital-ads-while-your-competitors-scale-for-free", "destination": "/ideas/are-you-burning-cash-on-digital-ads-while-your-competitors-scale-for-free/index.html" },
+    { "source": "/ideas/is-your-health-food-packaging-scaring-away-premium-supermarket-buyers", "destination": "/ideas/is-your-health-food-packaging-scaring-away-premium-supermarket-buyers/index.html" },
+    { "source": "/ideas/the-brutal-reason-your-wellness-drink-is-dying-on-the-shelf", "destination": "/ideas/the-brutal-reason-your-wellness-drink-is-dying-on-the-shelf/index.html" },
+    { "source": "/ideas/the-brutal-reason-your-wellness-drink-is-dying-on-the-shelf.", "destination": "/ideas/the-brutal-reason-your-wellness-drink-is-dying-on-the-shelf/index.html" },
+    { "source": "/ideas", "destination": "/ideas/index.html" },
+    { "source": "/contact", "destination": "/contact/index.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy/index.html" },
+    { "source": "/terms-conditions", "destination": "/terms-conditions/index.html" },
+    { "source": "/refund-policy", "destination": "/refund-policy/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
