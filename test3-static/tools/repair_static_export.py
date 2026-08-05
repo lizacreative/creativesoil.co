@@ -784,32 +784,35 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 
 CONTACT_CHROME_RUNTIME = r"""(()=>{
   const compact=node=>(node.textContent||'').replace(/\s+/g,'').toLowerCase();
-  const applyNavigation=()=>{
-    document.querySelectorAll('[data-framer-name="Links"]').forEach(links=>{
-      const nav=links.closest('nav');
-      const box=(nav||links).getBoundingClientRect();
-      if(box.width<180||box.height<24||getComputedStyle(nav||links).display==='none')return;
-      const anchors=[...links.querySelectorAll(':scope > a[href]')];
-      if(anchors.some(anchor=>compact(anchor).startsWith('works')))return;
-      const ideas=anchors.find(anchor=>compact(anchor).startsWith('ideas'));
-      if(!ideas)return;
-      const works=ideas.cloneNode(true);
-      works.dataset.creativeSoilNativeWorks='true';
-      works.href='/works/';
-      works.style.setProperty('color','#000000','important');
-      works.removeAttribute('data-framer-page-link-current');
-      works.setAttribute('aria-label','Works');
-      const rolling=[...works.querySelectorAll('p')].filter(node=>/rolling-text-inner/.test(String(node.className||'')));
-      rolling.forEach(label=>{
-        label.style.setProperty('color','#000000','important');
-        const letters=[...label.querySelectorAll('span')];
-        if(letters.length>=5)['W','o','r','k','s'].forEach((letter,index)=>{letters[index].textContent=letter});
-        else label.textContent='Works';
+  const applyNavigation = () => {
+  document.querySelectorAll('[data-framer-name="Links"]').forEach((links) => {
+    const anchors = [...links.querySelectorAll(':scope > a[href]')];
+    const ideas = anchors.find((a) => (a.textContent || '').replace(/\s+/g, '').toLowerCase().startsWith('ideas'));
+    if (!ideas || anchors.some((a) => (a.textContent || '').replace(/\s+/g, '').toLowerCase().startsWith('works'))) return;
+
+    const works = ideas.cloneNode(true);
+    works.href = '/works/';
+    works.style.setProperty('pointer-events', 'auto', 'important');
+    works.style.setProperty('cursor', 'pointer', 'important');
+    works.style.setProperty('color', '#000', 'important');
+
+    const rolling = works.querySelector('p[class*="rolling-text-inner"]');
+    if (rolling) {
+      rolling.style.setProperty('color', '#000', 'important');
+      const letters = [...rolling.querySelectorAll('span')];
+      ['W', 'o', 'r', 'k', 's'].forEach((letter, index) => {
+        if (letters[index]) letters[index].textContent = letter;
       });
-      if(!rolling.length)works.textContent='Works';
-      ideas.before(works);
+    }
+
+    works.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.location.assign('/works/');
     });
-  };
+
+    ideas.before(works);
+  });
+};
   const applyFooter=()=>{
     document.querySelectorAll('[data-framer-name="Email & Phone Number"]').forEach(block=>{
       const phone=block.querySelector('a[href^="tel:"]');
